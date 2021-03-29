@@ -14,7 +14,9 @@
 </head>
 <body>
     <div id="root">
+        <!-- colonna laterale -->
         <aside id="aside">
+            <!-- sezione utente statico -->
             <div class="info utente flex">
                 <div class="container base">
                     <img src="img/avatar_io.jpg" alt="">
@@ -40,8 +42,10 @@
             <div id="cerca" class="flex">
                 <input type="text" class="testo ricercca" placeholder="Cerca o inizia una chat" >
             </div>
+            <!-- fine sezione utente statico -->
+            <!-- lista contatti dinamica -->
             <div id="contatti">
-                <div class="info contatti flex" v-for="(item, index) in contacts" v-on:click="contactCaller(index)">
+                <div class="info contatti flex" v-for="(item, index) in contacts" v-on:click="contactCaller(index)" :class=" index == currentContactIndex? 'gray' : ' ' ">
                     <div class="container base">
                         <img :src="'img/avatar' + contacts[index].avatar + '.jpg'" alt="">
                     </div>
@@ -49,9 +53,13 @@
                         <h2>{{contacts[index].name}}</h2>
                     </div>
                 </div>
-            </div>  
+            </div> 
+            <!-- fine lista contatti dinamica -->
         </aside>
+        <!-- fine colonna laterale -->
+        <!-- colonna chat -->
         <main id="main">
+            <!-- info contatto-->
             <div class="info contatto flex">
                 <div class="container base">
                     <img :src="'img/avatar' + contacts[currentContactIndex].avatar + '.jpg'" alt="">
@@ -66,7 +74,8 @@
                     <i class="icone_azione__icone fas fa-ellipsis-v"></i>
                 </div>
             </div>
-
+            <!-- fine info contatto-->
+            <!-- chat-->
             <div id="chat">
 
 
@@ -74,7 +83,8 @@
 
 
             </div>
-
+            <!-- chat-->
+            <!-- sezione input messaggi -->
             <div class="text_input flex">
                 <div class="icone_azione">
                     <i class="icone_azione__icone icone_chat far fa-smile"></i>
@@ -84,7 +94,9 @@
                     <i class="icone_azione__icone icone_chat fas fa-microphone "></i>
                 </div>
             </div>
+            <!-- fine sezione input messaggi -->
         </main>
+        <!-- colonna chat -->
     </div>
     <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>

@@ -168,3 +168,7 @@ input {
 .name p small {
     color: rgba( 0, 0, 0, 0.3);
 }
+/*classi dinamiche*/
+.gray {
+    background-color: #eaeaea;
+}
