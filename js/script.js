@@ -81,7 +81,8 @@ const App = new Vue({
                  }
                  ],
              },
-         ]
+         ],
+         placeHoledr: "Cerca o inizia una chat"
      },
      methods: {
          

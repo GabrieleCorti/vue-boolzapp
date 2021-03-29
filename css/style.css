@@ -18,14 +18,12 @@ body {
     width: 80%;
     height: 95%;
     min-width: 950px;    
-    background-color: coral;
     display: flex;
 }
 
 #aside {
     width: 35%;
     height: 100%;
-    background-color: aquamarine;
 }
 
 #main {
@@ -105,4 +103,44 @@ img {
 
 .info_notifiche a:hover {
     text-decoration: none;
+}
+/*cerca*/
+#cerca {
+    height: 50px;
+    padding: 0 7px;
+    background-color: #EAEAEA;
+}
+
+.testo {
+    width: 100%;
+    border: none;
+    padding: 8px;
+}
+
+::placeholder {
+    opacity: 0.7;
+}
+/*contatti*/
+#contatti {
+    height: calc(100% - 195px);
+    background-color: white;
+    overflow-y: auto;
+}
+
+.info.contatti {
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.info.contatti:not(:first-child) {
+    border-top: 1px solid rgba(234, 234,	234, 0.7);
+}
+
+.info.contatti:hover {
+    background-color: #EAEAEA;
+    transition: all 0.4s;
+}
+
+.info.contatti .name {
+    align-self: flex-start;
 }
