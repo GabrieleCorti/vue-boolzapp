@@ -41,7 +41,7 @@
                 <input type="text" class="testo ricercca" placeholder="Cerca o inizia una chat" >
             </div>
             <div id="contatti">
-                <div class="info contatti flex" v-for="(item, index) in contacts">
+                <div class="info contatti flex" v-for="(item, index) in contacts" v-on:click="contactCaller(index)">
                     <div class="container base">
                         <img :src="'img/avatar' + contacts[index].avatar + '.jpg'" alt="">
                     </div>
@@ -54,10 +54,10 @@
         <main id="main">
             <div class="info contatto flex">
                 <div class="container base">
-                    <img src="img/avatar_io.jpg" alt="">
+                    <img :src="'img/avatar' + contacts[currentContactIndex].avatar + '.jpg'" alt="">
                 </div>
                 <div class="name">
-                    <h2>Nome Utente</h2>
+                    <h2>{{contacts[currentContactIndex].name}}</h2>
                     <p><small>Ultimo accesso oggi alle</small></p>
                 </div>
                 <div class="icone_azione">

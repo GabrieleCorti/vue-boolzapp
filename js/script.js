@@ -82,9 +82,11 @@ const App = new Vue({
                  ],
              },
          ],
-         placeHoledr: "Cerca o inizia una chat"
+         currentContactIndex: 0,
      },
      methods: {
-         
+         contactCaller: function(index) {
+            this.currentContactIndex = index;
+         }
      }
 });
