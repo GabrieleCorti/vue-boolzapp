@@ -90,7 +90,7 @@
                 <div class="icone_azione">
                     <i class="icone_azione__icone icone_chat far fa-smile"></i>
                 </div>
-                <input type="text" class="chat_testo" placeholder="Scrivi un messasagio">
+                <input type="text" class="chat_testo" id="input_chat" placeholder="Scrivi un messasagio" v-model="userText" v-on:keyup.enter="sendMsg(currentContactIndex)">
                 <div class="icone_azione">
                     <i class="icone_azione__icone icone_chat fas fa-microphone "></i>
                 </div>

@@ -83,10 +83,23 @@ const App = new Vue({
              },
          ],
          currentContactIndex: 0,
+         userText: ""
      },
      methods: {
          contactCaller: function(index) {
             this.currentContactIndex = index;
+         },
+         sendMsg: function(index) {
+            if(this.userText != "" ){
+                let nuovoMsg = {
+                    date: '',
+                    message: this.userText,
+                    status: 'sent'
+                }
+                this.contacts[index].messages.push(nuovoMsg);
+                this.userText = '';
+                console.log(nuovoMsg);
+            }
          }
      }
 });
