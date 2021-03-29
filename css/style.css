@@ -24,12 +24,12 @@ body {
 #aside {
     width: 35%;
     height: 100%;
+    border-right: 1px solid rgba(230, 230,	230);
 }
 
 #main {
     width: 65%;
     height: 100%;
-    background-color: blueviolet;
 }
 /*all*/
 h2 {
@@ -41,6 +41,10 @@ img {
     display: block;
 }
 
+input {
+    border: none;
+}
+
 .flex {
     display: flex;
     align-items: center;
@@ -49,7 +53,7 @@ img {
 
 /*aside*/
 /*info utente*/
-.info {
+.info, .text_input {
     padding: 10px;
     height: 65px;
     background-color: #EAEAEA;
@@ -113,7 +117,6 @@ img {
 
 .testo {
     width: 100%;
-    border: none;
     padding: 8px;
 }
 
@@ -143,4 +146,25 @@ img {
 
 .info.contatti .name {
     align-self: flex-start;
+}
+/*main*/
+#chat {
+    height: calc(100% - 130px);
+    background-image: url("../img/mine.jpg");
+    background-repeat: repeat;
+    overflow-y: auto;
+}
+
+.chat_testo {
+    width: 85%;
+    padding: 12px;
+}
+
+.icone_chat {
+    color: #6B7376;
+    font-size: 22px;
+}
+
+.name p small {
+    color: rgba( 0, 0, 0, 0.3);
 }
