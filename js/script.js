@@ -91,8 +91,9 @@ const App = new Vue({
          },
          sendMsg: function(index) {
             if(this.userText != "" ){
+                let a = dayjs().format('DD/MM/YYYY HH:mm:ss');
                 let nuovoMsg = {
-                    date: '',
+                    date: a,
                     message: this.userText,
                     status: 'sent'
                 }
@@ -103,3 +104,6 @@ const App = new Vue({
          }
      }
 });
+
+let a = dayjs().format('DD/MM/YYYY HH:mm:ss');
+console.log(a);
