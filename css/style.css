@@ -6,4 +6,31 @@
 
 body {
     font-family: 'Lato', sans-serif;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+/*section*/
+#root {
+    width: 70%;
+    height: 95%;
+    min-width: 950px;    
+    background-color: coral;
+    display: flex;
+}
+
+#aside {
+    width: 35%;
+    height: 100%;
+    background-color: aquamarine;
+}
+
+#main {
+    width: 65%;
+    height: 100%;
+    background-color: blueviolet;
+}
+
+/*typo*/
