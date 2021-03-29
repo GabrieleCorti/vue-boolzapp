@@ -168,7 +168,12 @@ input {
 .name p small {
     color: rgba( 0, 0, 0, 0.3);
 }
+
+.bloco_chat {
+    height: 10px;
+    background-color: red;
+}
 /*classi dinamiche*/
 .gray {
-    background-color: #eaeaea;
+    background-color: #EAEAEA !important;
 }

@@ -77,11 +77,9 @@
             <!-- fine info contatto-->
             <!-- chat-->
             <div id="chat">
+                <div class="bloco_chat" v-for="(item, index) in contacts[currentContactIndex].messages" :class="contacts[currentContactIndex].messages[index].status == 'sent'? 'destra' : 'sinistra' ">
 
-
-
-
-
+                </div>
             </div>
             <!-- chat-->
             <!-- sezione input messaggi -->
