@@ -40,7 +40,7 @@ const App = new Vue({
                  {
                      date: '20/03/2020 16:35:00',
                      message: 'Mi piacerebbe ma devo andare a fare la spesa.',
-                     status: 'received'
+                     status: 'sent'
                  }
                  ],
              },
@@ -83,7 +83,9 @@ const App = new Vue({
              },
          ],
          currentContactIndex: 0,
-         userText: ""
+         userText: "",
+         risposta: false,
+         stringaRicercca: ''
      },
      methods: {
          contactCaller: function(index) {
@@ -99,11 +101,25 @@ const App = new Vue({
                 }
                 this.contacts[index].messages.push(nuovoMsg);
                 this.userText = '';
-                console.log(nuovoMsg);
-            }
-         }
-     }
-});
+                this.risposta = true;
 
-let a = dayjs().format('DD/MM/YYYY HH:mm:ss');
-console.log(a);
+                var self = this;
+                setTimeout(function () {
+                    if (self.risposta == true) {
+                        let a = dayjs().format('DD/MM/YYYY HH:mm:ss');
+                        let autoMsg = {
+                            date: a,
+                            message: 'ok',
+                            status: 'recived'
+                        };
+                        self.contacts[self.currentContactIndex].messages.push(autoMsg);
+                        self.risposta = false;
+                    }
+                }, 1000);
+            }  
+         }
+
+        }
+        
+    });
+

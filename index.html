@@ -47,10 +47,10 @@
             <div id="contatti">
                 <div class="info contatti flex" v-for="(item, index) in contacts" v-on:click="contactCaller(index)" :class=" index == currentContactIndex? 'gray' : ' ' ">
                     <div class="container base">
-                        <img :src="'img/avatar' + contacts[index].avatar + '.jpg'" alt="">
+                        <img :src="'img/avatar' + item.avatar + '.jpg'" alt="">
                     </div>
                     <div class="name">
-                        <h2>{{contacts[index].name}}</h2>
+                        <h2>{{item.name}}</h2>
                     </div>
                 </div>
             </div> 
@@ -90,7 +90,7 @@
                 <div class="icone_azione">
                     <i class="icone_azione__icone icone_chat far fa-smile"></i>
                 </div>
-                <input type="text" class="chat_testo" id="input_chat" placeholder="Scrivi un messasagio" v-model="userText" v-on:keyup.enter="sendMsg(currentContactIndex)">
+                <input type="text" class="chat_testo" id="input_chat" placeholder="Scrivi un messasagio" v-model="userText" v-on:keyup.enter="sendMsg(currentContactIndex)" >
                 <div class="icone_azione">
                     <i class="icone_azione__icone icone_chat fas fa-microphone "></i>
                 </div>
