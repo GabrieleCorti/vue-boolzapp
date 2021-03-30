@@ -85,7 +85,8 @@ const App = new Vue({
          currentContactIndex: 0,
          userText: "",
          risposta: false,
-         stringaRicercca: ''
+         stringaRicerca: '',
+         elementoTrovato: true
      },
      methods: {
          contactCaller: function(index) {
@@ -117,8 +118,18 @@ const App = new Vue({
                     }
                 }, 1000);
             }  
-         }
-
+         },
+         
+        },
+        computed: {
+            filteredContacts: function() {
+                return this.contacts.filter(item => {
+                    if (this.stringaRicerca == '') {
+                        return this.contacts;
+                    }
+                    return item.name.toLowerCase().includes(this.stringaRicerca.toLowerCase());
+                })
+            }
         }
         
     });

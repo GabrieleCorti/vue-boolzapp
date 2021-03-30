@@ -40,12 +40,12 @@
                 </div>
             </div>
             <div id="cerca" class="flex">
-                <input type="text" class="testo ricercca" placeholder="Cerca o inizia una chat" >
+                <input type="text" class="testo ricercca" placeholder="Cerca o inizia una chat" v-model="stringaRicerca">
             </div>
             <!-- fine sezione utente statico -->
             <!-- lista contatti dinamica -->
             <div id="contatti">
-                <div class="info contatti flex" v-for="(item, index) in contacts" v-on:click="contactCaller(index)" :class=" index == currentContactIndex? 'gray' : ' ' ">
+                <div class="info contatti flex" v-for="(item, index) in filteredContacts" v-on:click="contactCaller(index)" :class=" index == currentContactIndex? 'gray' : ' ' " v-if="elementoTrovato">
                     <div class="container base">
                         <img :src="'img/avatar' + item.avatar + '.jpg'" alt="">
                     </div>
