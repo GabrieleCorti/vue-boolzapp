@@ -130,16 +130,6 @@ const App = new Vue({
           }
          }
          
-        },
-        computed: {
-            filteredContacts: function() {
-                return this.contacts.filter(item => {
-                    if (this.stringaRicerca == '') {
-                        return this.contacts;
-                    }
-                    return item.name.toLowerCase().includes(this.stringaRicerca.toLowerCase());
-                })
-            }
         }
         
     });
