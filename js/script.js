@@ -119,6 +119,16 @@ const App = new Vue({
                 }, 1000);
             }  
          },
+         finding: function(){
+          for (let i = 0; i < this.contacts.length; i++) {
+              if (!this.contacts[i].name.toLowerCase().includes(this.stringaRicerca.toLowerCase())){
+                  this.contacts[i].visible = false;
+              } else if (this.stringaRicerca == ""){
+                  this.contacts[i].visible = true;
+              };
+            
+          }
+         }
          
         },
         computed: {
